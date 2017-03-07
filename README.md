@@ -6,17 +6,17 @@ User Stories
 
 REQUIRED
 
-[ ]Launch Screen and App Icon
-[ ]User will be able to list ingredients they have, and will receive a list  of foods they can make with only their ingredients
-[ ]The user can tab over to a new page of recipes that contain their ingredients and others they do not possess 
-[ ]User can use a settings menu to filter recipes by allergies
+[ ] Launch Screen and App Icon
+[ ] User will be able to list ingredients they have, and will receive a list  of foods they can make with only their ingredients
+[ ] The user can tab over to a new page of recipes that contain their ingredients and others they do not possess 
+[ ] User can use a settings menu to filter recipes by allergies
 
 OPTIONAL
 
-[ ]User can search for nearby grocery store for missing ingredients
-[ ]User can order online for groceries to be delivered to their house for recipes
-[ ]Recipes will have calorie counts 
-[ ]User will be able to filter recipes by calories
+[ ] User can search for nearby grocery store for missing ingredients
+[ ] User can order online for groceries to be delivered to their house for recipes
+[ ] Recipes will have calorie counts 
+[ ] User will be able to filter recipes by calories
 
 Here's a walkthrough of implemented user stories:
 
