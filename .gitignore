@@ -2,6 +2,13 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## Mac FS (HFS)
+.DS_Store
+
+## Temp files
+*.swp
+*.tmp
+
 ## Build generated
 build/
 DerivedData/
