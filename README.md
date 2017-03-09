@@ -2,28 +2,43 @@
 
 A recipe by ingredients app. (WIP)
 
-User Stories
+## User Stories
 
-REQUIRED
+##### REQUIRED
 
 - [ ] Launch Screen and App Icon
 - [ ] User will be able to list ingredients they have, and will receive a list  of foods they can make with only their ingredients
 - [ ] The user can tab over to a new page of recipes that contain their ingredients and others they do not possess 
 - [ ] User can use a settings menu to filter recipes by allergies
 
-OPTIONAL
+##### OPTIONAL
 
 - [ ] User can search for nearby grocery store for missing ingredients
 - [ ] User can order online for groceries to be delivered to their house for recipes
 - [ ] Recipes will have calorie counts 
 - [ ] User will be able to filter recipes by calories
 
+## Video Walkthrough
+
 Here's a walkthrough of implemented user stories:
 
-Video Walkthrough
+
+## Wireframes
+
+**Initial views**
+![App startup tutorial & home screen](https://github.com/Sticky-Gerbil/furry-adventure/raw/master/Wireframes/initial-views.jpg)
+
+**Ingredient adding interfaces**
+![Add ingredient flows](https://github.com/Sticky-Gerbil/furry-adventure/raw/master/Wireframes/ingredient-views.jpg)
+
+**Cart and recipe search views**
+![Cart and recipe search](https://github.com/Sticky-Gerbil/furry-adventure/raw/master/Wireframes/cart-and-search.jpg)
+
+**Recipe view**
+![Recipe display](https://github.com/Sticky-Gerbil/furry-adventure/raw/master/Wireframes/recipe-view.jpg)
 
 
- License
+## License
 
     Copyright 2017 Hung Do, Robert Mitchell, Sang Saephan, Edwin Young
 
