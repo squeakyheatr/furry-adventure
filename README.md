@@ -38,8 +38,10 @@ Here's a walkthrough of implemented user stories:
 ![Recipe display](https://github.com/Sticky-Gerbil/furry-adventure/raw/master/Wireframes/recipe-view.jpg)
 
 **Data Scheme**
-![DataScheme](https://github.com/Sticky-Gerbil/furry-adventure/blob/master/DataScheme/image_uploaded_from_ios_480.png)
 
+Session
+* ID
+       
 
 
 ## License
