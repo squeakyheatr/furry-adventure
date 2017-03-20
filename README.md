@@ -41,8 +41,32 @@ Here's a walkthrough of implemented user stories:
 
 Session
 * ID
-       
 
+Ingredient
+* ID
+* SessionID
+* Units
+* Name
+* Quantity
+
+API
+* YummlyID
+* EdamamID
+* SpoonID
+
+Recipe
+* YummlyID
+* SessionID
+* Name
+* EdamamID
+* SpoonID
+
+Req Ingredient
+* IngredientID
+* Recipe Quantity
+* YummlyID
+* EdamamID
+* SpoonID
 
 ## License
 
