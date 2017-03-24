@@ -9,6 +9,9 @@
 *.swp
 *.tmp
 
+## API key files
+FurryAdventure/Keys.plist
+
 ## Build generated
 build/
 DerivedData/

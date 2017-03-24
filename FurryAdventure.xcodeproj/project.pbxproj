@@ -25,6 +25,7 @@
 		D9DC10071E67D59200CF4633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DC10051E67D59200CF4633 /* Main.storyboard */; };
 		D9DC10091E67D59200CF4633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DC10081E67D59200CF4633 /* Assets.xcassets */; };
 		D9DC100C1E67D59200CF4633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DC100A1E67D59200CF4633 /* LaunchScreen.storyboard */; };
+		D9FD8E6C1E84A1D0007B5D75 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FD8E6B1E84A1D0007B5D75 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D9DC10081E67D59200CF4633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9DC100B1E67D59200CF4633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9DC100D1E67D59200CF4633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9FD8E6B1E84A1D0007B5D75 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				D9DC10011E67D59200CF4633 /* AppDelegate.swift */,
 				D9DC10081E67D59200CF4633 /* Assets.xcassets */,
 				D9DC100D1E67D59200CF4633 /* Info.plist */,
+				D9FD8E6B1E84A1D0007B5D75 /* Keys.plist */,
 			);
 			path = FurryAdventure;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				4E1276EE1E80A7BA005A9A67 /* CartView.storyboard in Resources */,
 				D9DC100C1E67D59200CF4633 /* LaunchScreen.storyboard in Resources */,
 				4E1276F01E80A7FC005A9A67 /* RecipeSearchView.storyboard in Resources */,
+				D9FD8E6C1E84A1D0007B5D75 /* Keys.plist in Resources */,
 				4E1276E81E80A740005A9A67 /* AddIngredients.storyboard in Resources */,
 				4E1276F21E80A815005A9A67 /* RecipeDetailView.storyboard in Resources */,
 				D9DC10091E67D59200CF4633 /* Assets.xcassets in Resources */,
