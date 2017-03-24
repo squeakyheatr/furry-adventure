@@ -79,14 +79,14 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4E1276E31E80A5C2005A9A67 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4E1276E41E80A5C7005A9A67 /* Controller */ = {
@@ -100,14 +100,14 @@
 				4E1276FB1E80A8C4005A9A67 /* RecipeSearchVC.swift */,
 				4E1276FD1E80A8D5005A9A67 /* RecipeDetailVC.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		4E1276E51E80A5CD005A9A67 /* API */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		4E1276E61E80A5D2005A9A67 /* Storyboard */ = {
@@ -122,7 +122,7 @@
 				4E1276EF1E80A7FC005A9A67 /* RecipeSearchView.storyboard */,
 				4E1276F11E80A815005A9A67 /* RecipeDetailView.storyboard */,
 			);
-			name = Storyboard;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		69AB50CAD82C699D3E177C8A /* Frameworks */ = {
@@ -317,6 +317,7 @@
 				D9DC10061E67D59200CF4633 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D9DC100A1E67D59200CF4633 /* LaunchScreen.storyboard */ = {
@@ -325,6 +326,7 @@
 				D9DC100B1E67D59200CF4633 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
