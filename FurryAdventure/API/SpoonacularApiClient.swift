@@ -20,6 +20,9 @@ class SpoonacularApiClient: RecipeApiClient, RecipeApiProtocol {
 		EP_RECIPE_SEARCH = "/information"
 	}
 	
+	// API requests to Spoonacular API require HTTP headers instead of passing via query string; specifically
+	// X-Mashape-Key: ${SPOONACULAR_KEY}
+	// Accept: application/json
 	func findRecipes(by ingredients: [Ingredient]?) -> [Recipe]? {
 		// Modify request headers for API calls
 		let requestSerializer = AFNetworking.AFHTTPRequestSerializer()
@@ -62,6 +65,8 @@ class SpoonacularApiClient: RecipeApiClient, RecipeApiProtocol {
 					print(dataDictionary)
 					
 					// Can't even run this bit of code
+					// Maybe look into this? Would bypass AFNetworking.AFHTTPRequestSerializer entirely
+					// http://stackoverflow.com/a/37245658
 				}
 			}
 		}

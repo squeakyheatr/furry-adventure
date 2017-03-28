@@ -13,7 +13,11 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 	static let shared = YummlyApiClient(baseUrlString: "https://api.yummly.com/v1", key: "YummlyKey", app: "YummlyAppId")
 	
 	var authKey: String!
+	
+	// Needed to store/cache the results so we can display the results
 	var recipeSearchCache: [Recipe]?
+	
+	// Needed to store the recipe detail data
 	var recipeCache: Recipe?
 	
 	
@@ -40,6 +44,9 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 				if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
 					print(dataDictionary)
 					
+					// ETL Routine - Extract data from JSON, Transform into Recipe objects, Load into memory/cache
+					
+					// Extract the data from the JSON request
 					let recipesDict = dataDictionary["matches"] as! [NSDictionary]
 					
 					var tempRecipes = Array<Recipe>()
@@ -65,6 +72,7 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 		return recipeSearchCache
 	}
 	
+	// Look into renaming this into "Retrieve recipe info"?
 	func findRecipe(by id: String!) -> Recipe? {
 		
 		let urlString = apiUrlString + EP_RECIPE_SEARCH + "/" + id + "?" + authKey
