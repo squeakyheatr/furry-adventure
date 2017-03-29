@@ -35,7 +35,7 @@ class RecipeApiClient {
 			apiKey = dict[key!] as! String
 			
 			if app != nil {
-				appId = dict[app!] as! String
+				appId = dict[app!] as? String
 			} else {
 				appId = nil
 			}
