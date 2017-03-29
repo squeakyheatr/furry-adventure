@@ -8,7 +8,7 @@
 
 import Foundation
 
-let vegetables = ["Garlic", "Onion", "Olive", "Tomato", "Potato", "Salad Greens", "Carrot", "Basil", "Parsley", "Rosemary", "Bell Pepper", "Chili Pepper", "Corn", "Ginger", "Mushroom", "Broccoli", "Spinach", "Green Beans", "Celery", "Red Onion", "Cilantro", "Cucumber", "Pickle", "Dill", "Avocado", "Sweet Potato", "Zucchini", "Shallot", "Mixed Vegetable", "Cabbage", "Asparagus", "Cauliflower", "Mint", "Pumpkin", "Kale", "Frozen Vegetables", "Scallion", "Squash", "Sun Dried Tomato", "Horseradish", "Sweet Corn", "Beet"]
+let vegetables = ["garlic", "onion", "olive", "tomato", "potato", "salad greens", "carrot", "basil", "parsley", "rosemary", "bell pepper", "chili pepper", "corn", "ginger", "mushroom", "broccoli", "spinach", "green beans", "celery", "red onion", "cilantro", "cucumber", "pickle", "dill", "avocado", "sweet potato", "zucchini", "shallot", "mixed vegetable", "cabbage", "asparagus", "cauliflower", "mint", "pumpkin", "kale", "frozen vegetables", "scallion", "squash", "sun dried tomato", "horseradish", "sweet corn", "beet"]
 
 let fruits = ["lemon", "banana", "apple", "coconut", "mango", "lime", "orange", "pineapple", "strawberries", "raisin", "blueberries", "grapefruit", "grape", "prunes", "nectarine", "fig", "peach", "cranberries", "raspberries", "pear", "cherry", "apricot", "blackberries", "berries", "date", "watermelon", "kiwi", "craisins", "mandarin", "cantaloupe", "plum", "papaya", "pomegranate", "apple butter", "clementine", "rhubarb", "tangerine", "sultanas", "currant", "plantain", "passion fruit", "persimmons", "quince", "lychee", "tangelos", "lingonberry", "kumquat", "boysenberry", "star fruit", "guava"]
 

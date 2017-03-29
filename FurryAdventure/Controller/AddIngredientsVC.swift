@@ -17,8 +17,8 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
     var categories = ["Vegetables", "Fruits", "Meat", "Dairy", "Grains and Carbs", "Herbs and Spices"]
     var images = [UIImage(named: "vegetables"), UIImage(named: "fruits"), UIImage(named: "meat"), UIImage(named: "dairy"), UIImage(named: "grains_and_carbs"), UIImage(named: "herbs_and_spices")]
     
-    var ingredients = ["Apple", "Banana", "Cake", "Chicken Breast", "Chicken Feet"]
-    var filteredIngredients = ["Apple", "Banana", "Cake", "Chicken Breast", "Chicken Feet"]
+    var ingredients = vegetables + fruits + meat + dairy + grainsAndCarbs + herbsAndSpices
+    var filteredIngredients = vegetables + fruits + meat + dairy + grainsAndCarbs + herbsAndSpices
     
     
     override func viewDidLoad() {
@@ -31,6 +31,7 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
         searchBar.delegate = self
 
         // Do any additional setup after loading the view.
+        print(ingredients.sorted())
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +56,7 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
             collectionView.isHidden = true
         }
         
-        filteredIngredients = searchText.isEmpty ? ingredients : ingredients.filter({
+        filteredIngredients = searchText.isEmpty ? ingredients.sorted() : ingredients.sorted().filter({
             $0.range(of: searchText, options: .caseInsensitive) != nil
         })
         
@@ -68,7 +69,7 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchIngredientCell", for: indexPath)
-        cell.textLabel?.text = filteredIngredients[indexPath.row]
+        cell.textLabel?.text = filteredIngredients[indexPath.row].capitalized
         
         return cell
     }
