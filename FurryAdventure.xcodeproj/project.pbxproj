@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E122B241E8A0135001D276E /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E122B231E8A0135001D276E /* Keys.plist */; };
 		4E122B271E8A0474001D276E /* AddIngredientsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E122B261E8A0474001D276E /* AddIngredientsCollectionCell.swift */; };
+		4E122B291E8B0A0E001D276E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E122B281E8B0A0E001D276E /* Constants.swift */; };
 		4E1276E81E80A740005A9A67 /* AddIngredients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1276E71E80A740005A9A67 /* AddIngredients.storyboard */; };
 		4E1276EA1E80A774005A9A67 /* CategoryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1276E91E80A774005A9A67 /* CategoryView.storyboard */; };
 		4E1276EC1E80A798005A9A67 /* IngredientSearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1276EB1E80A798005A9A67 /* IngredientSearchView.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		4E122B231E8A0135001D276E /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4E122B261E8A0474001D276E /* AddIngredientsCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddIngredientsCollectionCell.swift; path = View/AddIngredientsCollectionCell.swift; sourceTree = "<group>"; };
+		4E122B281E8B0A0E001D276E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E1276E71E80A740005A9A67 /* AddIngredients.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddIngredients.storyboard; sourceTree = "<group>"; };
 		4E1276E91E80A774005A9A67 /* CategoryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategoryView.storyboard; sourceTree = "<group>"; };
 		4E1276EB1E80A798005A9A67 /* IngredientSearchView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IngredientSearchView.storyboard; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				D9DC10081E67D59200CF4633 /* Assets.xcassets */,
 				D9DC100D1E67D59200CF4633 /* Info.plist */,
 				4E122B231E8A0135001D276E /* Keys.plist */,
+				4E122B281E8B0A0E001D276E /* Constants.swift */,
 			);
 			path = FurryAdventure;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				D9DC10021E67D59200CF4633 /* AppDelegate.swift in Sources */,
 				4E1276FE1E80A8D5005A9A67 /* RecipeDetailVC.swift in Sources */,
 				4E1276FA1E80A8B3005A9A67 /* CartVC.swift in Sources */,
+				4E122B291E8B0A0E001D276E /* Constants.swift in Sources */,
 				D9A4CAAA1E89D2B8007CA88C /* SpoonacularApiClient.swift in Sources */,
 				4E1276F81E80A8A2005A9A67 /* IngredientSearchVC.swift in Sources */,
 				4E1276F61E80A882005A9A67 /* CategoryVC.swift in Sources */,

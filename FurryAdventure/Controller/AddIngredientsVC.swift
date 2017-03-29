@@ -72,21 +72,35 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
         
         return cell
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // Pass ingredients into selected category
+        if segue.identifier == "CategoryViewSegue" {
+            let cell = sender as! AddIngredientsCollectionCell
+            let indexPath = collectionView.indexPath(for: cell)
+            
+            let title = cell.nameLabel.text
+            
+            let navigationController = segue.destination as! UINavigationController
+            let detailViewController = navigationController.topViewController as! CategoryVC
+            
+            detailViewController.navigationController?.navigationBar.topItem?.title = title
+            
+            if indexPath?.row == 0 {
+                detailViewController.categoryIngredients = vegetables.sorted()
+            } else if indexPath?.row == 1 {
+                detailViewController.categoryIngredients = fruits.sorted()
+            } else if indexPath?.row == 2 {
+                detailViewController.categoryIngredients = meat.sorted()
+            } else if indexPath?.row == 3 {
+                detailViewController.categoryIngredients = dairy.sorted()
+            } else if indexPath?.row == 4 {
+                detailViewController.categoryIngredients = grainsAndCarbs.sorted()
+            } else if indexPath?.row == 5 {
+                detailViewController.categoryIngredients = herbsAndSpices.sorted()
+            }
+        }
     }
-    */
 
 }
