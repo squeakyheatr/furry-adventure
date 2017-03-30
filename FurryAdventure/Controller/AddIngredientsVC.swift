@@ -29,9 +29,6 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-
-        // Do any additional setup after loading the view.
-        print(ingredients.sorted())
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,6 +69,17 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
         cell.textLabel?.text = filteredIngredients[indexPath.row].capitalized
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        cart.append(filteredIngredients[indexPath.row])
+        
+        let alertController = UIAlertController(title: "Added Ingredient:", message:
+            "\(filteredIngredients[indexPath.row].capitalized)", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
