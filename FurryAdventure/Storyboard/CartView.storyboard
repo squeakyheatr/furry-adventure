@@ -48,6 +48,9 @@
                                 <state key="normal" title="FIND RECIPES">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onFindRecipesPressed:" destination="D2q-L1-mcB" eventType="touchUpInside" id="SPR-2Z-7d7"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-Aq-kut">
                                 <rect key="frame" x="0.0" y="64" width="375" height="540"/>

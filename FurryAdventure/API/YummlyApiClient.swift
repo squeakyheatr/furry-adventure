@@ -29,7 +29,7 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 		EP_RECIPE_SEARCH = "/api/recipe"
 	}
 	
-	func findRecipes(by ingredients: [Ingredient]?) -> [Recipe]? {
+    func findRecipes(by ingredients: [Ingredient]?, completion: @escaping DownloadComplete) -> [Recipe]? {
 		
 		var urlString = apiUrlString + EP_RECIPES_SEARCH + "?" + authKey + "&"
 		for ingredient in ingredients! {
@@ -42,7 +42,7 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 		let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
 			if let data = data {
 				if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-					print(dataDictionary)
+					//print(dataDictionary)
 					
 					// ETL Routine - Extract data from JSON, Transform into Recipe objects, Load into memory/cache
 					
@@ -64,11 +64,11 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 					}
 					
 					self.recipeSearchCache = tempRecipes
+                    completion(self.recipeSearchCache!)
 				}
 			}
 		}
 		task.resume()
-		
 		return recipeSearchCache
 	}
 	

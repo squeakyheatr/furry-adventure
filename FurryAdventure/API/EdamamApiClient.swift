@@ -24,7 +24,7 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 		EP_RECIPE_SEARCH = nil
 	}
 	
-	func findRecipes(by ingredients: [Ingredient]?) -> [Recipe]? {
+	func findRecipes(by ingredients: [Ingredient]?, completion: @escaping DownloadComplete) -> [Recipe]? {
 		
 		var urlString = apiUrlString + EP_RECIPES_SEARCH + "?" + authKey + "&q="
 		for ingredient in ingredients! {
@@ -59,6 +59,7 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 					}
 					
 					self.recipeSearchCache = tempRecipes
+                    completion(self.recipeSearchCache!)
 				}
 			}
 		}

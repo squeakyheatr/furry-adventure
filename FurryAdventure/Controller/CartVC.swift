@@ -30,4 +30,19 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    @IBAction func onFindRecipesPressed(_ sender: Any) {
+        var ingredients = [Ingredient]()
+        
+        for index in 0..<cart.count {
+            let newIngredient = Ingredient(cart[index])
+            ingredients.append(newIngredient)
+        }
+        
+        YummlyApiClient.shared.findRecipes(by: ingredients) {recipes in
+            let storyboard = UIStoryboard(name: "RecipeSearchView", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "RecipeSearchVC") as! RecipeSearchVC
+            viewController.recipes = recipes
+            self.present(viewController, animated: true, completion: nil)
+        }
+    }
 }
