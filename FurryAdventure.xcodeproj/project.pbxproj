@@ -22,6 +22,7 @@
 		4E1276FA1E80A8B3005A9A67 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1276F91E80A8B3005A9A67 /* CartVC.swift */; };
 		4E1276FC1E80A8C4005A9A67 /* RecipeSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1276FB1E80A8C4005A9A67 /* RecipeSearchVC.swift */; };
 		4E1276FE1E80A8D5005A9A67 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1276FD1E80A8D5005A9A67 /* RecipeDetailVC.swift */; };
+		4ED4CFF31E8EEA7C00DF049D /* RecipeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED4CFF21E8EEA7C00DF049D /* RecipeSearchTableViewCell.swift */; };
 		8C5441B53FCF7633B3FBE6C9 /* Pods_FurryAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77679449BCF0004588FD9224 /* Pods_FurryAdventure.framework */; };
 		D9A4CAA61E89CBC1007CA88C /* YummlyApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A4CAA51E89CBC1007CA88C /* YummlyApiClient.swift */; };
 		D9A4CAA81E89D07D007CA88C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A4CAA71E89D07D007CA88C /* Ingredient.swift */; };
@@ -52,6 +53,7 @@
 		4E1276F91E80A8B3005A9A67 /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		4E1276FB1E80A8C4005A9A67 /* RecipeSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchVC.swift; sourceTree = "<group>"; };
 		4E1276FD1E80A8D5005A9A67 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
+		4ED4CFF21E8EEA7C00DF049D /* RecipeSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchTableViewCell.swift; sourceTree = "<group>"; };
 		77679449BCF0004588FD9224 /* Pods_FurryAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FurryAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2784261E27640CDB0F78BE0 /* Pods-FurryAdventure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurryAdventure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FurryAdventure/Pods-FurryAdventure.debug.xcconfig"; sourceTree = "<group>"; };
 		BA60C853208D31F52991CCFF /* Pods-FurryAdventure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FurryAdventure.release.xcconfig"; path = "Pods/Target Support Files/Pods-FurryAdventure/Pods-FurryAdventure.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				4E122B261E8A0474001D276E /* AddIngredientsCollectionCell.swift */,
+				4ED4CFF21E8EEA7C00DF049D /* RecipeSearchTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				4E1276F41E80A866005A9A67 /* AddIngredientsVC.swift in Sources */,
 				D9A4CAA61E89CBC1007CA88C /* YummlyApiClient.swift in Sources */,
 				D9A4CAAC1E89DDA4007CA88C /* EdamamApiClient.swift in Sources */,
+				4ED4CFF31E8EEA7C00DF049D /* RecipeSearchTableViewCell.swift in Sources */,
 				D9C3D8941E862C7400BB1A8F /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

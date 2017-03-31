@@ -13,12 +13,16 @@ class Recipe: NSObject {
 	var apiId: String?
 	var name: String?
 	var ingredients: [Ingredient]?
+    var imageUrl: URL?
+    var cookTime: Int?
 	
-	init(client: RecipeApiClient!, id: String?, name: String?, ingredients: [Ingredient]?) {
+    init(client: RecipeApiClient!, id: String?, name: String?, ingredients: [Ingredient]?, imageUrl: URL?, cookTime: Int?) {
 		apiClient = client
 		apiId = id
 		self.name = name
 		self.ingredients = ingredients
+        self.imageUrl = imageUrl
+        self.cookTime = cookTime
 	}
 	
 	func getApiId() -> String! {

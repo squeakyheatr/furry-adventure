@@ -18,6 +18,8 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,8 +31,8 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeSearchCell", for: indexPath)
-        cell.textLabel?.text = recipes![indexPath.row].name!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeSearchCell", for: indexPath) as! RecipeSearchTableViewCell
+        cell.configureCell(recipe: recipes[indexPath.row])
         
         return cell
     }

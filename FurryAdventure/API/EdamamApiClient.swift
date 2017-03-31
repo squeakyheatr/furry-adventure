@@ -55,7 +55,7 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 							ingredients.append(Ingredient(ingredient))
 						}
 						
-						tempRecipes.append(Recipe(client: self, id: nil, name: name, ingredients: ingredients))
+						tempRecipes.append(Recipe(client: self, id: nil, name: name, ingredients: ingredients, imageUrl: nil, cookTime: nil))
 					}
 					
 					self.recipeSearchCache = tempRecipes

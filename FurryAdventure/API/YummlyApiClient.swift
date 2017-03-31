@@ -51,6 +51,7 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
                 ingredientName = ingredient.name!
             }
 			urlString += "allowedIngredient[]=\(ingredientName)&"
+            ingredientName = ""
 		}
 		
 		let url = URL(string: urlString)!
@@ -76,8 +77,20 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 						for ingredient in (dict["ingredients"] as! [String]) {
 							ingredients.append(Ingredient(ingredient))
 						}
+                        
+                        var imageUrl: URL? = nil
+                        if let imageUrlSize = dict["imageUrlsBySize"] as? NSDictionary {
+                            if let url = imageUrlSize["90"] as? String {
+                                imageUrl = URL(string: url)
+                            }
+                        }
+                        
+                        var cookTime: Int? = 0
+                        if let time = dict["totalTimeInSeconds"] as? Int {
+                            cookTime = time
+                        }
 						
-						tempRecipes.append(Recipe(client: self, id: id, name: name, ingredients: ingredients))
+						tempRecipes.append(Recipe(client: self, id: id, name: name, ingredients: ingredients, imageUrl: imageUrl, cookTime: cookTime))
 					}
 					
 					self.recipeSearchCache = tempRecipes
