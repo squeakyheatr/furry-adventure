@@ -30,10 +30,27 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 	}
 	
     func findRecipes(by ingredients: [Ingredient]?, completion: @escaping DownloadComplete) -> [Recipe]? {
-		
+		let whitespace = NSCharacterSet.whitespaces
+        var ingredientName = ""
+        
 		var urlString = apiUrlString + EP_RECIPES_SEARCH + "?" + authKey + "&"
 		for ingredient in ingredients! {
-			urlString += "allowedIngredient[]=\(ingredient.name!)&"
+            let range = ingredient.name.rangeOfCharacter(from: whitespace)
+            
+            // If ingredient name contains a space, add a "+" between the words
+            if let test = range {
+                let name = ingredient.name.components(separatedBy: " ")
+                for word in name {
+                    if name.index(of: word) == name.count-1 {
+                        ingredientName += "\(word)"
+                    } else {
+                        ingredientName += "\(word)+"
+                    }
+                }
+            } else {
+                ingredientName = ingredient.name!
+            }
+			urlString += "allowedIngredient[]=\(ingredientName)&"
 		}
 		
 		let url = URL(string: urlString)!
