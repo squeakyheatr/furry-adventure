@@ -20,16 +20,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyu-bT-0cx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyu-bT-0cx">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryViewCell" id="yNl-K5-2aO">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yNl-K5-2aO" id="jgP-08-DCJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -37,6 +36,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pyu-bT-0cx" firstAttribute="top" secondItem="kJn-Ol-9MG" secondAttribute="bottom" id="BzX-ug-wRB"/>
+                            <constraint firstItem="TcR-sc-ZdX" firstAttribute="top" secondItem="Pyu-bT-0cx" secondAttribute="bottom" id="Oz6-Zj-ObF"/>
+                            <constraint firstItem="Pyu-bT-0cx" firstAttribute="leading" secondItem="Vez-yZ-JeM" secondAttribute="leading" id="mI6-JG-8TT"/>
+                            <constraint firstAttribute="trailing" secondItem="Pyu-bT-0cx" secondAttribute="trailing" id="nSV-gQ-LIX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s0P-Tp-Cqx">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Mvt-j6-qf3">

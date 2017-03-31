@@ -52,16 +52,15 @@
                                     <action selector="onFindRecipesPressed:" destination="D2q-L1-mcB" eventType="touchUpInside" id="SPR-2Z-7d7"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-Aq-kut">
-                                <rect key="frame" x="0.0" y="64" width="375" height="540"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-Aq-kut">
+                                <rect key="frame" x="0.0" y="64" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartViewCell" id="2eG-tN-bwf">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2eG-tN-bwf" id="So3-FC-S8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -72,10 +71,14 @@
                         <constraints>
                             <constraint firstItem="Msd-pH-jQe" firstAttribute="top" secondItem="5J7-81-VdD" secondAttribute="bottom" id="Cs7-pG-iCN"/>
                             <constraint firstAttribute="trailing" secondItem="Msd-pH-jQe" secondAttribute="trailing" id="F34-kb-1VR"/>
+                            <constraint firstItem="ytv-Aq-kut" firstAttribute="leading" secondItem="Bm3-mw-i0M" secondAttribute="leading" id="KT3-Fl-1jh"/>
+                            <constraint firstItem="ytv-Aq-kut" firstAttribute="top" secondItem="Msd-pH-jQe" secondAttribute="bottom" id="Knh-IV-3XV"/>
                             <constraint firstItem="mbA-8a-1Pu" firstAttribute="leading" secondItem="Bm3-mw-i0M" secondAttribute="leading" id="O77-c8-GMr"/>
                             <constraint firstItem="YGg-vK-epH" firstAttribute="top" secondItem="mbA-8a-1Pu" secondAttribute="bottom" id="VOe-M4-htk"/>
+                            <constraint firstItem="mbA-8a-1Pu" firstAttribute="top" secondItem="ytv-Aq-kut" secondAttribute="bottom" id="hQg-Gy-pJ1"/>
                             <constraint firstAttribute="trailing" secondItem="mbA-8a-1Pu" secondAttribute="trailing" id="jOb-La-EtS"/>
                             <constraint firstItem="Msd-pH-jQe" firstAttribute="leading" secondItem="Bm3-mw-i0M" secondAttribute="leading" id="l2M-bL-hOm"/>
+                            <constraint firstAttribute="trailing" secondItem="ytv-Aq-kut" secondAttribute="trailing" id="wgW-aI-e2y"/>
                         </constraints>
                     </view>
                     <connections>
