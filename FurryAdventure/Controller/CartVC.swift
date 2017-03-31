@@ -29,6 +29,14 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // Deletes an item from the cart
+        if editingStyle == .delete {
+            cart.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 
     @IBAction func onFindRecipesPressed(_ sender: Any) {
         var ingredients = [Ingredient]()
