@@ -17,8 +17,8 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
     var categories = ["Vegetables", "Fruits", "Meat", "Dairy", "Grains and Carbs", "Herbs and Spices"]
     var images = [UIImage(named: "vegetables"), UIImage(named: "fruits"), UIImage(named: "meat"), UIImage(named: "dairy"), UIImage(named: "grains_and_carbs"), UIImage(named: "herbs_and_spices")]
     
-    var ingredients = vegetables + fruits + meat + dairy + grainsAndCarbs + herbsAndSpices
-    var filteredIngredients = vegetables + fruits + meat + dairy + grainsAndCarbs + herbsAndSpices
+    var ingredients = [vegetables, fruits, meat, dairy, grainsAndCarbs, herbsAndSpices, fish, oil, seafood, sweeteners, seasonings, nuts, condiments, dessertsAndSnacks, beverages, soup, dairyAlternatives, legumes, sauces, alcohol].joined(separator: []).map{$0}
+    var filteredIngredients = [vegetables, fruits, meat, dairy, grainsAndCarbs, herbsAndSpices, fish, oil, seafood, sweeteners, seasonings, nuts, condiments, dessertsAndSnacks, beverages, soup, dairyAlternatives, legumes, sauces, alcohol].joined(separator: []).map{$0}
     
     
     override func viewDidLoad() {
