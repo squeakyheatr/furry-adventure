@@ -132,11 +132,12 @@
                         <outlet property="collectionView" destination="cg1-qY-hjg" id="H9S-ng-Cd9"/>
                         <outlet property="searchBar" destination="MAx-x5-Wrb" id="yEZ-se-ZPu"/>
                         <outlet property="tableView" destination="4IG-sq-gjn" id="l18-M1-yye"/>
+                        <outlet property="toolBar" destination="KzC-tx-S21" id="NXj-qJ-5hx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl7-IF-7gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="134"/>
+            <point key="canvasLocation" x="-28" y="133.5832083958021"/>
         </scene>
         <!--CartView-->
         <scene sceneID="Zeb-fO-0Qe">
