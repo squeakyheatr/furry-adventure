@@ -10,8 +10,23 @@ import UIKit
 
 class RecipeDetailVC: UIViewController {
 
+    
+    var recipes: Recipe!
+
+    @IBOutlet weak var recipeName: UILabel!
+    @IBOutlet weak var recipePicture: UIImageView!
+    
+    @IBAction func onBackButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    recipeName.text = recipes.name
+    recipePicture.setImageWith(recipes.imageUrl! as URL)
 
         // Do any additional setup after loading the view.
     }

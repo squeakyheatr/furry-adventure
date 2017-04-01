@@ -41,4 +41,20 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "recipeDetail") {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            let recipeData = recipes[(indexPath?.row)!]
+            
+            let recipeDetailViewController = segue.destination as! RecipeDetailVC
+            
+            recipeDetailViewController.recipes = recipeData
+            
+            
+            
+            
+        }
+    }
+    
 }

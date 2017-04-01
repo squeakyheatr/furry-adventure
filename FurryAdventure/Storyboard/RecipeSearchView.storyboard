@@ -87,6 +87,7 @@
                                             <outlet property="recipeImageView" destination="U5y-YX-tks" id="MSd-jd-OiC"/>
                                             <outlet property="recipeNameLabel" destination="VbH-xb-76M" id="8aN-gD-tyJ"/>
                                             <outlet property="recipeTimerLabel" destination="RdZ-JM-iHJ" id="EtA-g4-W72"/>
+                                            <segue destination="vmu-l2-pUV" kind="show" identifier="recipeDetail" id="bgQ-vN-dmt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -134,6 +135,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZW-HE-r0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818.4000000000001" y="-7.6461769115442282"/>
+        </scene>
+        <!--RecipeDetailView-->
+        <scene sceneID="IyW-aF-eZD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecipeDetailView" id="vmu-l2-pUV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8k-th-FIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="-108"/>
         </scene>
     </scenes>
     <resources>
