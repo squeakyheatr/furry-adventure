@@ -9,7 +9,7 @@ import UIKit
 
 protocol RecipeApiProtocol {
 	func findRecipes(by ingredients: [Ingredient]?, completion: @escaping DownloadComplete) -> [Recipe]?
-	func findRecipe(by id: String!) -> Recipe?
+	func findRecipe(by id: String!, completion: @escaping (String) -> ()) -> Recipe?
 }
 
 class RecipeApiClient {

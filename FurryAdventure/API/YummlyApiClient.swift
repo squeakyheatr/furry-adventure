@@ -89,8 +89,10 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
                         if let time = dict["totalTimeInSeconds"] as? Int {
                             cookTime = time
                         }
+                        
+                        
 						
-						tempRecipes.append(Recipe(client: self, id: id, name: name, ingredients: ingredients, imageUrl: imageUrl, cookTime: cookTime))
+                        tempRecipes.append(Recipe(client: self, id: id, name: name, ingredients: ingredients, imageUrl: imageUrl, cookTime: cookTime, recipeId: id))
 					}
 					
 					self.recipeSearchCache = tempRecipes
@@ -103,7 +105,7 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 	}
 	
 	// Look into renaming this into "Retrieve recipe info"?
-	func findRecipe(by id: String!) -> Recipe? {
+    func findRecipe(by id: String!, completion: @escaping (String) -> ()) -> Recipe? {
 		
 		let urlString = apiUrlString + EP_RECIPE_SEARCH + "/" + id + "?" + authKey
 		
@@ -113,9 +115,13 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
 		let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
 			if let data = data {
 				if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-					print(dataDictionary)
+					//print(dataDictionary)
 					
 					// Figure out how to handle individual recipes
+                    let source = dataDictionary["source"] as? NSDictionary
+                    let sourceSite = source?["sourceRecipeUrl"] as? String
+                    
+                    completion(sourceSite!)
 				}
 			}
 		}

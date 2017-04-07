@@ -55,7 +55,7 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 							ingredients.append(Ingredient(ingredient))
 						}
 						
-						tempRecipes.append(Recipe(client: self, id: nil, name: name, ingredients: ingredients, imageUrl: nil, cookTime: nil))
+						tempRecipes.append(Recipe(client: self, id: nil, name: name, ingredients: ingredients, imageUrl: nil, cookTime: nil, recipeId: nil))
 					}
 					
 					self.recipeSearchCache = tempRecipes
@@ -68,7 +68,7 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 		return recipeSearchCache
 	}
 	
-	func findRecipe(by id: String!) -> Recipe? {
+	func findRecipe(by id: String!, completion: @escaping (String) -> ()) -> Recipe? {
 		
 		
 		return nil
