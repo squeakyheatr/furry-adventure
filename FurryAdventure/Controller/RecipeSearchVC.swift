@@ -20,10 +20,18 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+        if recipes.count == 0 {
+            let alertController = UIAlertController(title: "No Recipes Found!", message:
+                nil, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,10 +58,6 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let recipeDetailViewController = segue.destination as! RecipeDetailVC
             
             recipeDetailViewController.recipes = recipeData
-            
-            
-            
-            
         }
     }
     
