@@ -7,5 +7,6 @@ target 'FurryAdventure' do
 
   # Pods for FurryAdventure
   pod 'AFNetworking'
+  pod 'PKHUD'
 
 end

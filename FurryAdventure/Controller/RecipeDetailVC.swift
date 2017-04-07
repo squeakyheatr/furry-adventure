@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PKHUD
 
-class RecipeDetailVC: UIViewController {
+class RecipeDetailVC: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
@@ -17,14 +18,20 @@ class RecipeDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        webView.delegate = self
+        HUD.dimsBackground = false
+        
         YummlyApiClient.shared.findRecipe(by: recipes.recipeId!) { (sourceSite) in
+            HUD.show(.label("Loading Recipe Details..."))
             let url = URL(string: sourceSite)
             let requestObj = URLRequest(url: url!)
             self.webView.loadRequest(requestObj)
-
         }
 
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        HUD.hide(animated: true)
     }
     
     @IBAction func onBackButtonPressed(_ sender: Any) {
