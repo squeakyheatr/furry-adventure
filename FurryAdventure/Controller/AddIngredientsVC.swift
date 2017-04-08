@@ -13,12 +13,15 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var toolBar: UIToolbar!
+
+    
     
     var categories = ["Vegetables", "Fruits", "Meat", "Dairy", "Grains and Carbs", "Herbs and Spices"]
     var images = [UIImage(named: "vegetables"), UIImage(named: "fruits"), UIImage(named: "meat"), UIImage(named: "dairy"), UIImage(named: "grains_and_carbs"), UIImage(named: "herbs_and_spices")]
     
-    var ingredients = ["Apple", "Banana", "Cake", "Chicken Breast", "Chicken Feet"]
-    var filteredIngredients = ["Apple", "Banana", "Cake", "Chicken Breast", "Chicken Feet"]
+    var ingredients = [vegetables, fruits, meat, dairy, grainsAndCarbs, herbsAndSpices, fish, oil, seafood, sweeteners, seasonings, nuts, condiments, dessertsAndSnacks, beverages, soup, dairyAlternatives, legumes, sauces, alcohol].joined(separator: []).map{$0}
+    var filteredIngredients = [vegetables, fruits, meat, dairy, grainsAndCarbs, herbsAndSpices, fish, oil, seafood, sweeteners, seasonings, nuts, condiments, dessertsAndSnacks, beverages, soup, dairyAlternatives, legumes, sauces, alcohol].joined(separator: []).map{$0}
     
     
     override func viewDidLoad() {
@@ -29,8 +32,6 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-
-        // Do any additional setup after loading the view.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +56,7 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
             collectionView.isHidden = true
         }
         
-        filteredIngredients = searchText.isEmpty ? ingredients : ingredients.filter({
+        filteredIngredients = searchText.isEmpty ? ingredients.sorted() : ingredients.sorted().filter({
             $0.range(of: searchText, options: .caseInsensitive) != nil
         })
         
@@ -68,25 +69,50 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchIngredientCell", for: indexPath)
-        cell.textLabel?.text = filteredIngredients[indexPath.row]
+        cell.textLabel?.text = filteredIngredients[indexPath.row].capitalized
         
         return cell
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        cart.append(filteredIngredients[indexPath.row])
+        
+        let alertController = UIAlertController(title: "Added Ingredient:", message:
+            "\(filteredIngredients[indexPath.row].capitalized)", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // Pass ingredients into selected category
+        if segue.identifier == "CategoryViewSegue" {
+            let cell = sender as! AddIngredientsCollectionCell
+            let indexPath = collectionView.indexPath(for: cell)
+            
+            let title = cell.nameLabel.text
+            
+            let navigationController = segue.destination as! UINavigationController
+            let detailViewController = navigationController.topViewController as! CategoryVC
+            
+            detailViewController.navigationController?.navigationBar.topItem?.title = title
+            
+            if indexPath?.row == 0 {
+                detailViewController.categoryIngredients = vegetables.sorted()
+            } else if indexPath?.row == 1 {
+                detailViewController.categoryIngredients = fruits.sorted()
+            } else if indexPath?.row == 2 {
+                detailViewController.categoryIngredients = meat.sorted()
+            } else if indexPath?.row == 3 {
+                detailViewController.categoryIngredients = dairy.sorted()
+            } else if indexPath?.row == 4 {
+                detailViewController.categoryIngredients = grainsAndCarbs.sorted()
+            } else if indexPath?.row == 5 {
+                detailViewController.categoryIngredients = herbsAndSpices.sorted()
+            }
+        }
     }
-    */
 
 }

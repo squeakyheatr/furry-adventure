@@ -19,12 +19,45 @@
                     <view key="view" contentMode="scaleToFill" id="j4O-Xa-BOc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWB-zC-pxl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xi8-Aq-r1c"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Details" id="jvx-Dh-O1u">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Voe-UJ-CeZ">
+                                            <connections>
+                                                <action selector="onBackButtonPressed:" destination="yZF-3u-7QQ" id="7SE-g9-nNv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9S3-6n-KLi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yWB-zC-pxl" secondAttribute="trailing" id="LIr-Te-b3O"/>
+                            <constraint firstItem="9S3-6n-KLi" firstAttribute="leading" secondItem="j4O-Xa-BOc" secondAttribute="leading" id="QyK-sy-NK8"/>
+                            <constraint firstItem="yWB-zC-pxl" firstAttribute="top" secondItem="cEx-6X-her" secondAttribute="bottom" id="Z6O-4f-U6X"/>
+                            <constraint firstItem="yWB-zC-pxl" firstAttribute="leading" secondItem="j4O-Xa-BOc" secondAttribute="leading" id="eeh-Q8-Pi4"/>
+                            <constraint firstAttribute="trailing" secondItem="9S3-6n-KLi" secondAttribute="trailing" id="grR-QV-wbW"/>
+                            <constraint firstItem="rTF-S2-Kq3" firstAttribute="top" secondItem="9S3-6n-KLi" secondAttribute="bottom" id="oWo-Ll-GTs"/>
+                            <constraint firstItem="9S3-6n-KLi" firstAttribute="top" secondItem="yWB-zC-pxl" secondAttribute="bottom" id="yeB-fH-5W1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="9S3-6n-KLi" id="FyE-QQ-Jw2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nd-yN-d1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="139"/>
+            <point key="canvasLocation" x="124" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

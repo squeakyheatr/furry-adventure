@@ -6,9 +6,9 @@ A recipe by ingredients app. (WIP)
 
 ##### REQUIRED
 
-- [ ] Launch Screen and App Icon
-- [ ] User will be able to list ingredients they have, and will receive a list  of foods they can make with only their ingredients
-- [ ] The user can tab over to a new page of recipes that contain their ingredients and others they do not possess 
+- [X] Launch Screen and App Icon
+- [X] User will be able to list ingredients they have, and will receive a list  of foods they can make with only their ingredients
+- [X] The user can tab over to a new page of recipes that contain their ingredients and others they do not possess 
 - [ ] User can use a settings menu to filter recipes by allergies
 
 ##### OPTIONAL
@@ -22,6 +22,7 @@ A recipe by ingredients app. (WIP)
 
 Here's a walkthrough of implemented user stories:
 
+![](Cookery.gif)
 
 ## Wireframes
 
@@ -67,6 +68,11 @@ Req Ingredient
 * YummlyID
 * EdamamID
 * SpoonID
+
+## APIs
+* Yummly
+* Edemam
+* Spoonacular
 
 ## License
 

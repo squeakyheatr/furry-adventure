@@ -7,29 +7,36 @@
 //
 
 import UIKit
+import PKHUD
 
-class RecipeDetailVC: UIViewController {
+class RecipeDetailVC: UIViewController, UIWebViewDelegate {
 
+    @IBOutlet weak var webView: UIWebView!
+    
+    var recipes: Recipe!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        webView.delegate = self
+        HUD.dimsBackground = false
+        
+        YummlyApiClient.shared.findRecipe(by: recipes.recipeId!) { (sourceSite) in
+            HUD.show(.label("Loading Recipe Details..."))
+            let url = URL(string: sourceSite)
+            let requestObj = URLRequest(url: url!)
+            self.webView.loadRequest(requestObj)
+        }
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        HUD.hide(animated: true)
     }
-    */
+    
+    @IBAction func onBackButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+    }
 
 }
