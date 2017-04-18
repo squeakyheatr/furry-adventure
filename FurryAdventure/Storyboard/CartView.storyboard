@@ -11,7 +11,7 @@
         <!--CartVC-->
         <scene sceneID="Bjc-Bz-74X">
             <objects>
-                <viewController id="D2q-L1-mcB" customClass="CartVC" customModule="FurryAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartVC" id="D2q-L1-mcB" customClass="CartVC" customModule="FurryAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5J7-81-VdD"/>
                         <viewControllerLayoutGuide type="bottom" id="YGg-vK-epH"/>

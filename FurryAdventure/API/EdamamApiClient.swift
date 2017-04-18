@@ -25,11 +25,29 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 	}
 	
 	func findRecipes(by ingredients: [Ingredient]?, completion: @escaping DownloadComplete) -> [Recipe]? {
-		
-		var urlString = apiUrlString + EP_RECIPES_SEARCH + "?" + authKey + "&q="
-		for ingredient in ingredients! {
-			urlString += "\(ingredient.name!),"
-		}
+		let whitespace = NSCharacterSet.whitespaces
+        var ingredientName = ""
+        
+        var urlString = apiUrlString + EP_RECIPES_SEARCH + "?" + authKey + "&q="
+        for ingredient in ingredients! {
+            let range = ingredient.name.rangeOfCharacter(from: whitespace)
+            
+            // If ingredient name contains a space, add a "+" between the words
+            if let test = range {
+                let name = ingredient.name.components(separatedBy: " ")
+                for word in name {
+                    if name.index(of: word) == name.count-1 {
+                        ingredientName += "\(word)"
+                    } else {
+                        ingredientName += "\(word)+"
+                    }
+                }
+            } else {
+                ingredientName = ingredient.name!
+            }
+            urlString += "\(ingredientName),"
+            ingredientName = ""
+        }
 		
 		let url = URL(string: urlString)!
 		let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -37,13 +55,13 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 		let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
 			if let data = data {
 				if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-					print(dataDictionary)
+					//print(dataDictionary)
 					
 					// Have to unwrap the actual recipe dict, because Edamam is dumb that way
 					let tempDict = dataDictionary["hits"] as! [NSDictionary]
 					var recipesDict = Array<NSDictionary>()
 					for dict in tempDict {
-						recipesDict.append(dict["recipes"] as! NSDictionary)
+						recipesDict.append(dict["recipe"] as! NSDictionary)
 					}
 					
 					var tempRecipes = Array<Recipe>()
@@ -54,8 +72,13 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 						for ingredient in (dict["ingredientLines"] as! [String]) {
 							ingredients.append(Ingredient(ingredient))
 						}
+                        
+                        let imageUrl = URL(string: (dict["image"] as? String)!)
+                        
+                        let recipeUrl = dict["url"] as? String
+                        
 						
-						tempRecipes.append(Recipe(client: self, id: nil, name: name, ingredients: ingredients, imageUrl: nil, cookTime: nil, recipeId: nil))
+                        tempRecipes.append(Recipe(client: self, id: nil, name: name, ingredients: ingredients, imageUrl: imageUrl, cookTime: 0, recipeId: nil, recipeUrl: recipeUrl))
 					}
 					
 					self.recipeSearchCache = tempRecipes
@@ -70,6 +93,7 @@ class EdamamApiClient: RecipeApiClient, RecipeApiProtocol {
 	
 	func findRecipe(by id: String!, completion: @escaping (String) -> ()) -> Recipe? {
 		
+        completion(id)
 		
 		return nil
 	}

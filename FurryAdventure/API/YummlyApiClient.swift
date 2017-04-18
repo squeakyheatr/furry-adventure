@@ -92,7 +92,7 @@ class YummlyApiClient: RecipeApiClient, RecipeApiProtocol {
                         
                         
 						
-                        tempRecipes.append(Recipe(client: self, id: id, name: name, ingredients: ingredients, imageUrl: imageUrl, cookTime: cookTime, recipeId: id))
+                        tempRecipes.append(Recipe(client: self, id: id, name: name, ingredients: ingredients, imageUrl: imageUrl, cookTime: cookTime, recipeId: id, recipeUrl: nil))
 					}
 					
 					self.recipeSearchCache = tempRecipes

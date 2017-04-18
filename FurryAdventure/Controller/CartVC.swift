@@ -51,7 +51,13 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let viewController = storyboard.instantiateViewController(withIdentifier: "RecipeSearchVC") as! RecipeSearchVC
             viewController.recipes = recipes
             viewController.ingredients = ingredients
-            self.present(viewController, animated: true, completion: nil)
+            
+            EdamamApiClient.shared.findRecipes(by: ingredients, completion: { (recipes) in
+                for recipe in recipes {
+                    viewController.recipes.append(recipe)
+                }
+                self.present(viewController, animated: true, completion: nil)
+            })
         }
     }
 }

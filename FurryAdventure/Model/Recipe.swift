@@ -16,8 +16,9 @@ class Recipe: NSObject {
     var imageUrl: URL?
     var cookTime: Int?
     var recipeId: String?
+    var recipeUrl: String?
 	
-    init(client: RecipeApiClient!, id: String?, name: String?, ingredients: [Ingredient]?, imageUrl: URL?, cookTime: Int?, recipeId: String?) {
+    init(client: RecipeApiClient!, id: String?, name: String?, ingredients: [Ingredient]?, imageUrl: URL?, cookTime: Int?, recipeId: String?, recipeUrl: String?) {
 		apiClient = client
 		apiId = id
 		self.name = name
@@ -25,6 +26,7 @@ class Recipe: NSObject {
         self.imageUrl = imageUrl
         self.cookTime = cookTime
         self.recipeId = recipeId
+        self.recipeUrl = recipeUrl
 	}
 	
 	func getApiId() -> String! {

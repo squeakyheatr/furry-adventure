@@ -47,7 +47,9 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "CartView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CartVC") as! CartVC
+        self.present(viewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

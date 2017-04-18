@@ -30,8 +30,8 @@ class RecipeSearchTableViewCell: UITableViewCell {
         }
         
         currentIngredients = recipe.getIngredients()
-
-        numberOfIngredientsLabel.text = ("We have \(ingredients.count) of ingredients out of \(currentIngredients.count) ingredients")
+        
+        numberOfIngredientsLabel.text = "Missing \(currentIngredients.count-ingredients.count) of \(currentIngredients.count) Ingredients"
         
     }
 
