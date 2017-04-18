@@ -50,6 +50,7 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: "RecipeSearchView", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "RecipeSearchVC") as! RecipeSearchVC
             viewController.recipes = recipes
+            viewController.ingredients = ingredients
             self.present(viewController, animated: true, completion: nil)
         }
     }
