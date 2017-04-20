@@ -38,6 +38,14 @@ class FilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nutSwitch.isOn =  UserDefaults.standard.bool(forKey: "nutSwitchState")
+        peanutSwitch.isOn =  UserDefaults.standard.bool(forKey: "peanutSwitchState")
+        fishSwitch.isOn =  UserDefaults.standard.bool(forKey: "fishSwitchState")
+        soySwitch.isOn =  UserDefaults.standard.bool(forKey: "soySwitchState")
+        shellfishSwitch.isOn =  UserDefaults.standard.bool(forKey: "shellfishSwitchState")
+        dairySwitch.isOn =  UserDefaults.standard.bool(forKey: "dairySwitchState")
+        wheatSwitch.isOn =  UserDefaults.standard.bool(forKey: "wheatSwitchState")
+
         // Do any additional setup after loading the view.
     }
     
@@ -171,6 +179,15 @@ class FilterViewController: UIViewController {
         self.present(viewController, animated: true, completion: nil)
     }
 
+    @IBAction func saveSwitchPressed(_ sender: UISwitch) {
+        UserDefaults.standard.set(nutSwitch.isOn, forKey: "nutSwitchState")
+        UserDefaults.standard.set(peanutSwitch.isOn, forKey: "peanutSwitchState")
+        UserDefaults.standard.set(wheatSwitch.isOn, forKey: "wheatSwitchState")
+        UserDefaults.standard.set(shellfishSwitch.isOn, forKey: "shellfishSwitchState")
+        UserDefaults.standard.set(soySwitch.isOn, forKey: "soySwitchState")
+        UserDefaults.standard.set(dairySwitch.isOn, forKey: "dairySwitchState")
+        UserDefaults.standard.set(fishSwitch.isOn, forKey: "fishSwitchState")        
+    }
     
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
