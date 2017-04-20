@@ -39,6 +39,14 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     @IBAction func onFindRecipesPressed(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "nutSwitchState")
+        UserDefaults.standard.set(false, forKey: "peanutSwitchState")
+        UserDefaults.standard.set(false, forKey: "fishSwitchState")
+        UserDefaults.standard.set(false, forKey: "shellfishSwitchState")
+        UserDefaults.standard.set(false, forKey: "wheatSwitchState")
+        UserDefaults.standard.set(false, forKey: "soySwitchState")
+        UserDefaults.standard.set(false, forKey: "dairySwitchState")
+        
         var ingredients = [Ingredient]()
         
         for index in 0..<cart.count {
@@ -50,7 +58,14 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: "RecipeSearchView", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "RecipeSearchVC") as! RecipeSearchVC
             viewController.recipes = recipes
-            self.present(viewController, animated: true, completion: nil)
+            viewController.ingredients = ingredients
+            
+            EdamamApiClient.shared.findRecipes(by: ingredients, completion: { (recipes) in
+                for recipe in recipes {
+                    viewController.recipes.append(recipe)
+                }
+                self.present(viewController, animated: true, completion: nil)
+            })
         }
     }
 }

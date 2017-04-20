@@ -12,6 +12,7 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     var recipes: [Recipe]!
+    var ingredients = [Ingredient]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +41,15 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeSearchCell", for: indexPath) as! RecipeSearchTableViewCell
-        cell.configureCell(recipe: recipes[indexPath.row])
+        cell.configureCell(recipe: recipes[indexPath.row], ingredients: ingredients)
         
         return cell
     }
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "CartView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CartVC") as! CartVC
+        self.present(viewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,10 +57,22 @@ class RecipeSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPath(for: cell)
             let recipeData = recipes[(indexPath?.row)!]
+            for ingred in recipeData.ingredients! {
+                print (ingred.name)
+            }
             
             let recipeDetailViewController = segue.destination as! RecipeDetailVC
             
             recipeDetailViewController.recipes = recipeData
+            
+            
+            
+            
+        } else if (segue.identifier == "FilterView"){
+            
+            let filerVC = segue.destination as! FilterViewController
+            filerVC.recipes = recipes
+            filerVC.ingredients = ingredients
         }
     }
     

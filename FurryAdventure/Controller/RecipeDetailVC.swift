@@ -21,11 +21,19 @@ class RecipeDetailVC: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         HUD.dimsBackground = false
         
-        YummlyApiClient.shared.findRecipe(by: recipes.recipeId!) { (sourceSite) in
-            HUD.show(.label("Loading Recipe Details..."))
-            let url = URL(string: sourceSite)
-            let requestObj = URLRequest(url: url!)
-            self.webView.loadRequest(requestObj)
+        if recipes.recipeId == nil {
+            EdamamApiClient.shared.findRecipe(by: recipes.recipeUrl!, completion: { (recipeUrl) in
+                let url = URL(string: recipeUrl)
+                let requestObj = URLRequest(url: url!)
+                self.webView.loadRequest(requestObj)
+            })
+        } else {
+            YummlyApiClient.shared.findRecipe(by: recipes.recipeId!) { (sourceSite) in
+                HUD.show(.label("Loading Recipe Details..."))
+                let url = URL(string: sourceSite)
+                let requestObj = URLRequest(url: url!)
+                self.webView.loadRequest(requestObj)
+            }
         }
 
     }

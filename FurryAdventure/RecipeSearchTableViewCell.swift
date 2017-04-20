@@ -14,8 +14,9 @@ class RecipeSearchTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeTimerLabel: UILabel!
     @IBOutlet weak var numberOfIngredientsLabel: UILabel!
+    var currentIngredients = [Ingredient]()
     
-    func configureCell(recipe: Recipe) {
+    func configureCell(recipe: Recipe, ingredients: [Ingredient]) {
         if let image = recipe.imageUrl {
             recipeImageView.setImageWith(image)
         }
@@ -27,6 +28,11 @@ class RecipeSearchTableViewCell: UITableViewCell {
         } else {
             recipeTimerLabel.text = "N/A"
         }
+        
+        currentIngredients = recipe.getIngredients()
+        
+        numberOfIngredientsLabel.text = "Missing \(currentIngredients.count-ingredients.count) of \(currentIngredients.count) Ingredients"
+        
     }
 
 }
