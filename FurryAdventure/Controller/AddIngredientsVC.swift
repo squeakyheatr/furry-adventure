@@ -63,6 +63,21 @@ class AddIngredientsVC: UIViewController, UICollectionViewDelegate, UICollection
         tableView.reloadData()
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        collectionView.alpha = 0.5
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        
+        tableView.isHidden = true
+        collectionView.isHidden = false
+        collectionView.alpha = 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredIngredients.count
     }
