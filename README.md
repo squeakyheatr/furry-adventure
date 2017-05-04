@@ -9,7 +9,7 @@ A recipe by ingredients app. (WIP)
 - [X] Launch Screen and App Icon
 - [X] User will be able to list ingredients they have, and will receive a list  of foods they can make with only their ingredients
 - [X] The user can tab over to a new page of recipes that contain their ingredients and others they do not possess 
-- [ ] User can use a settings menu to filter recipes by allergies
+- [X] User can use a settings menu to filter recipes by allergies
 
 ##### OPTIONAL
 
