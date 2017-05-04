@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yZF-3u-7QQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yZF-3u-7QQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,8 +26,9 @@
                                     <constraint firstAttribute="height" constant="44" id="xi8-Aq-r1c"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Details" id="jvx-Dh-O1u">
+                                    <navigationItem title="Instructions" id="jvx-Dh-O1u">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Voe-UJ-CeZ">
+                                            <color key="tintColor" red="0.1764705882" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="onBackButtonPressed:" destination="yZF-3u-7QQ" id="7SE-g9-nNv"/>
                                             </connections>
